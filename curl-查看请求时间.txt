@@ -1,0 +1,1 @@
+curl -o /dev/null -s -w '\n               状态码: %{http_code}\n          dns响应时间: %{time_namelookup}s\n    建立tcp连接的时间: %{time_redirect}s\n 响 应第一个字节的时间: %{time_connect}s\n     连接建立完成时间: %{time_appconnect}\n               总时间: %{time_total}s\n' www.baidu.com
