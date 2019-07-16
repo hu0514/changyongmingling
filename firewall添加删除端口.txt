@@ -1,0 +1,15 @@
+
+添加端口
+firewall-cmd --zone=pulbic --add-port=80/tcp --permanent
+添加服务
+firewall-cmd --zone=public --add-service=http --permanent
+重载规则
+firewall-cmd --reload
+删除端口
+firewall-cmd --zone=public --remove-port=80/tcp --permanent
+删除服务 
+firewall-cmd --zone=public --delete-service=http
+
+查看开放的端口
+firewall-cmd --zone=public --list-ports
+在每次修改规则后都需要执行重载命令新的规则才会生效
