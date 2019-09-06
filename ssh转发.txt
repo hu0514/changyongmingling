@@ -15,3 +15,18 @@ g表示允许远程主机连接转发端口
 
 root@45.32.18.170 -N -p 40002
 远程服务器连接地址 
+
+
+docker命令
+A服务器代理B服务器
+1、授权免密登录
+A服务器操作
+ssh-keygen
+ssh-copy-id
+2、启动docker容器
+docker run -d -it \
+       -v /root/.ssh:/root/.ssh \
+       --network host \
+       --name ssh_proxy \
+       panubo/sshd \
+       ssh -C  -N -g -L 43306:127.0.0.1:3306 root@*.*.*.* -N -p 40002
