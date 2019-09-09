@@ -27,6 +27,7 @@ ssh-copy-id
 docker run -d -it \
        -v /root/.ssh:/root/.ssh \
        --network host \
+       --restart always \
        --name ssh_proxy \
        panubo/sshd \
        ssh -C  -N -g -L 43306:127.0.0.1:3306 root@*.*.*.* -N -p 40002
