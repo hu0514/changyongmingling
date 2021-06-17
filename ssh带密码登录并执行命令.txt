@@ -1,0 +1,5 @@
+先安装一个软件包
+yum install -y sshpass
+  
+只需要在ssh命令的前面带上sshpass就可以了
+sshpass -p 'redhat' ssh root@192.168.1.1 systemctl restart nginx
